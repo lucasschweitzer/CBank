@@ -1,5 +1,6 @@
 
 using Banco.Modelo;
+using Banco.Telas;
 
 namespace Banco
 {
@@ -15,7 +16,7 @@ namespace Banco
             // see https://aka.ms/applicationconfiguration.
             Conta c;
             ApplicationConfiguration.Initialize();
-            Application.Run(new telaPrincipal(c.Nome));
+            Application.Run(new TelaLogin());
         }
     }
 }

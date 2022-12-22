@@ -8,6 +8,7 @@ namespace Banco.Modelo
 {
     public class Conta
     {
+        int codigo;
         string nome;
         string sobrenome;
         string email;
@@ -21,5 +22,6 @@ namespace Banco.Modelo
         public int Telefone { get => telefone; set => telefone = value; }
         public double Saldo { get => saldo; set => saldo = value; }
         public int Cpf { get => cpf; set => cpf = value; }
+        public int Codigo { get => codigo; set => codigo = value; }
     }
     }
