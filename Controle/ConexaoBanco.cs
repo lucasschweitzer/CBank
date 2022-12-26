@@ -8,7 +8,7 @@ namespace Banco.Controle
 {
     internal class ConexaoBanco
     {
-        string sqlConStr = "Server=Lucas_PC\\SQLEXPRESS;Database=CBANK;Trusted_Connection=True;";
+        string sqlConStr = "Server=ADM019911\\SQLEXPRESS;Database=BANCO;Trusted_Connection=True;";
 
         public string strConexao()
         {

@@ -65,6 +65,7 @@
             this.btnCreditarSaldo.TabIndex = 2;
             this.btnCreditarSaldo.Text = "Creditar Saldo";
             this.btnCreditarSaldo.UseVisualStyleBackColor = true;
+            this.btnCreditarSaldo.Click += new System.EventHandler(this.btnCreditarSaldo_Click);
             // 
             // btnFazerTransferencia
             // 

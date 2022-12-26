@@ -12,16 +12,16 @@ namespace Banco.Modelo
         string nome;
         string sobrenome;
         string email;
-        int telefone;
-        int cpf;
+        string telefone;
+        string cpf;
         Double saldo;
 
         public string Nome { get => nome; set => nome = value; }
         public string Sobrenome { get => sobrenome; set => sobrenome = value; }
         public string Email { get => email; set => email = value; }
-        public int Telefone { get => telefone; set => telefone = value; }
+        public string Telefone { get => telefone; set => telefone = value; }
         public double Saldo { get => saldo; set => saldo = value; }
-        public int Cpf { get => cpf; set => cpf = value; }
+        public string Cpf { get => cpf; set => cpf = value; }
         public int Codigo { get => codigo; set => codigo = value; }
     }
     }

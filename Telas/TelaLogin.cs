@@ -20,6 +20,7 @@ namespace Banco.Telas
             
         }
         ControlaConta ctrlConta = new ControlaConta();
+        Conta c;
         private void TelaLogin_Load(object sender, EventArgs e)
         {
 
@@ -37,8 +38,15 @@ namespace Banco.Telas
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            telaPrincipal telaP = new telaPrincipal();
-            telaP.Show();
+            if (ctrlConta.validaConta(txtbCodigo.Text) == true)
+            {
+                telaPrincipal telaP = new telaPrincipal();
+                telaP.Show();
+            } else
+            {
+                MessageBox.Show("erro");
+            }
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -46,8 +54,8 @@ namespace Banco.Telas
             Conta c = new Conta();
             c.Nome = txtbNome.Text;
             c.Sobrenome= txtbSobrenome.Text;
-            c.Cpf = Convert.ToInt32(txtbCpf.Text);
-            c.Telefone = Convert.ToInt32(txtbTelefone.Text);
+            c.Cpf = txtbCpf.Text;
+            c.Telefone = txtbTelefone.Text;
             c.Email = txtbEmail.Text;
             c.Saldo = Convert.ToDouble(txtbSaldo.Text);
             ctrlConta.cadastraConta(c);
