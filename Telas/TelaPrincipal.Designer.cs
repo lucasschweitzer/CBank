@@ -75,6 +75,7 @@
             this.btnFazerTransferencia.TabIndex = 3;
             this.btnFazerTransferencia.Text = "Fazer Transferência";
             this.btnFazerTransferencia.UseVisualStyleBackColor = true;
+            this.btnFazerTransferencia.Click += new System.EventHandler(this.btnFazerTransferencia_Click);
             // 
             // btnHistorico
             // 
@@ -84,6 +85,7 @@
             this.btnHistorico.TabIndex = 4;
             this.btnHistorico.Text = "Histórico de Movimentações";
             this.btnHistorico.UseVisualStyleBackColor = true;
+            this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
             // 
             // btnAlterarDados
             // 

@@ -16,18 +16,9 @@ namespace Banco.Modelo
         SqlCommand comando;
         SqlDataAdapter da;
         SqlConnection con;
+        SqlDataReader reader;
         string strSql;
         Conta c;
-
-        private void creditarSaldo(Conta conta, int valor)
-        {
-            conta.Saldo = conta.Saldo + valor;
-        }
-
-        private void debitarSaldo(Conta conta, int valor)
-        {
-            conta.Saldo = conta.Saldo - valor;
-        }
 
         public void mostrarSaldo(string codigo)
         {
@@ -75,12 +66,12 @@ namespace Banco.Modelo
         public Boolean validaConta(string cpf)
         {
                 con = new SqlConnection(banco.strConexao());
-                strSql = "SELECT * FROM Contas WHERE cpf = '@cpf'";
+                strSql = "SELECT * FROM Contas WHERE cpf = @cpf";
                 comando = new SqlCommand(strSql, con);
                 comando.Parameters.AddWithValue("cpf", cpf);
                 con.Open();
-                int r = comando.ExecuteNonQuery();
-                if (r >= 0)
+                reader = comando.ExecuteReader();
+                if (reader.HasRows == true)
                 {
                     return true;
 
@@ -91,11 +82,6 @@ namespace Banco.Modelo
             }
             con.Close();
 
-        }
-
-        private void Print(string v)
-        {
-            throw new NotImplementedException();
         }
 
         public void creditarSaldo(string cpf, double valor)
@@ -120,6 +106,61 @@ namespace Banco.Modelo
                 comando.Clone();
                 comando = null;
             }
+        }
+
+        public void fazerTransferencia(Double valor, string contaorigem, string contadestino)
+        {
+            con = new SqlConnection(banco.strConexao());
+            strSql = "UPDATE Contas SET saldo=saldo - @valor WHERE cpf = @contaorigem UPDATE Contas SET saldo=saldo + @valor WHERE cpf = @contadestino";
+            comando = new SqlCommand (strSql, con);
+            comando.Parameters.AddWithValue("@valor", valor);
+            comando.Parameters.AddWithValue("contaorigem", contaorigem);
+            comando.Parameters.AddWithValue("contadestino", contadestino);
+            con.Open ();
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void registraMovimentacao (Movimentacao m)
+        {
+            con = new SqlConnection(banco.strConexao());
+            strSql = "INSERT INTO Movimentacoes (contaorigem, contadestino, valor) VALUES (@contaorigem, @contadestino, @valor)";
+            comando = new SqlCommand(strSql, con);
+            comando.Parameters.AddWithValue("@contaorigem", m.ContaOrigem);
+            comando.Parameters.AddWithValue("@contadestino", m.ContaDestino);
+            comando.Parameters.AddWithValue("@valor", m.Valor);
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        public void preencheTabela(DataGridView tabela, string cpf)
+        {
+            try
+            {
+                tabela.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                tabela.AllowUserToAddRows = false;
+                tabela.RowHeadersVisible = false;
+                tabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                con = new SqlConnection(banco.strConexao());
+                strSql = "SELECT m.codigo as 'Código Movimentação', m.hora as 'Data', m.contaorigem as 'Conta Origem', m.contadestino as 'Conta de Destino', valor as 'Valor 'FROM Movimentacoes m WHERE contaorigem = @cpf";      
+                DataSet ds = new DataSet();
+                da = new SqlDataAdapter(strSql, con);
+                da.SelectCommand.Parameters.Add("@cpf", SqlDbType.VarChar).Value = cpf;
+                con.Open();
+                da.Fill(ds);
+                tabela.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
     }
 }

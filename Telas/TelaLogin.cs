@@ -19,27 +19,19 @@ namespace Banco.Telas
             InitializeComponent();
             
         }
+        public string cpf()
+        {
+            return txtbCodigo.Text;
+        }
+
         ControlaConta ctrlConta = new ControlaConta();
         Conta c;
-        private void TelaLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbCodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (ctrlConta.validaConta(txtbCodigo.Text) == true)
             {
+                SalvaCpf.salvaCpf = txtbCodigo.Text;
                 telaPrincipal telaP = new telaPrincipal();
                 telaP.Show();
             } else

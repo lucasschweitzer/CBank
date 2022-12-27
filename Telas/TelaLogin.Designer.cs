@@ -54,7 +54,6 @@
             this.label1.Size = new System.Drawing.Size(99, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Digite seu codigo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtbCodigo
             // 
@@ -62,7 +61,6 @@
             this.txtbCodigo.Name = "txtbCodigo";
             this.txtbCodigo.Size = new System.Drawing.Size(100, 23);
             this.txtbCodigo.TabIndex = 1;
-            this.txtbCodigo.TextChanged += new System.EventHandler(this.txtbCodigo_TextChanged);
             // 
             // btnLogin
             // 
@@ -203,7 +201,6 @@
             this.Controls.Add(this.label1);
             this.Name = "TelaLogin";
             this.Text = "LOGIN";
-            this.Load += new System.EventHandler(this.TelaLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

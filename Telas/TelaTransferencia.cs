@@ -1,4 +1,5 @@
-﻿using Banco.Modelo;
+﻿using Banco.Controle;
+using Banco.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,23 +12,23 @@ using System.Windows.Forms;
 
 namespace Banco.Telas
 {
-    public partial class TelaOperacao : Form
+    public partial class TelaTransferencia : Form
     {
-        public TelaOperacao()
+        public TelaTransferencia()
         {
             InitializeComponent();
         }
-
         ControlaConta ctrlConta = new ControlaConta();
+
 
         private void btnTransferir_Click(object sender, EventArgs e)
         {
-            ctrlConta.creditarSaldo(txtbCpf.Text, Convert.ToDouble(txtbValor.Text));
             Movimentacao m = new Movimentacao();
-            m.Valor = Convert.ToDouble(txtbValor.Text);
-            m.ContaOrigem = txtbCpf.Text;
-            m.ContaDestino = txtbCpf.Text;
+            m.Valor = (Convert.ToDouble(txtbValor.Text));
+            m.ContaOrigem = txtbOrigem.Text;
+            m.ContaDestino = txtbDestino.Text;
             ctrlConta.registraMovimentacao(m);
+            ctrlConta.fazerTransferencia(Convert.ToDouble(txtbValor.Text), txtbOrigem.Text, txtbDestino.Text);           
         }
     }
 }

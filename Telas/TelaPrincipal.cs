@@ -10,8 +10,10 @@ namespace Banco
         public  telaPrincipal()
         {
             InitializeComponent();
+            
         }
         ControlaConta ctrlConta = new ControlaConta();
+        TelaLogin tela = new TelaLogin();
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -21,7 +23,7 @@ namespace Banco
 
         private void btnMostrarSaldo_Click(object sender, EventArgs e)
         {
-            string s = Interaction.InputBox("Digite a sua conta: ", "Informe sua conta", " ");
+            string s = SalvaCpf.salvaCpf;
             ctrlConta.mostrarSaldo(s);
 
         }
@@ -36,6 +38,18 @@ namespace Banco
             TelaOperacao tela = new TelaOperacao();
             tela.Show();
             
+        }
+
+        private void btnFazerTransferencia_Click(object sender, EventArgs e)
+        {
+            TelaTransferencia tela = new TelaTransferencia();
+            tela.Show();
+        }
+
+        private void btnHistorico_Click(object sender, EventArgs e)
+        {
+            TelaHistorico tela = new TelaHistorico();
+            tela.Show();
         }
     }
 }
