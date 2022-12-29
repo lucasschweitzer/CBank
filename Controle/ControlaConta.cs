@@ -38,7 +38,7 @@ namespace Banco.Modelo
             try
             {
                 con = new SqlConnection(banco.strConexao());
-                strSql = "INSERT INTO Contas (nome, sobrenome, cpf, telefone, email, saldo) VALUES (@Nome, @Sobrenome, @Cpf, @Telefone, @Email, @Saldo)";
+                strSql = "INSERT INTO Contas (nome, sobrenome, cpf, telefone, email, saldo, senha) VALUES (@Nome, @Sobrenome, @Cpf, @Telefone, @Email, @Saldo, @Senha)";
                 comando = new SqlCommand(strSql, con);
                 comando.Parameters.AddWithValue("@Nome", conta.Nome);
                 comando.Parameters.AddWithValue("@Sobrenome", conta.Sobrenome);
@@ -46,6 +46,7 @@ namespace Banco.Modelo
                 comando.Parameters.AddWithValue("@Telefone", conta.Telefone);
                 comando.Parameters.AddWithValue("@Email", conta.Email);
                 comando.Parameters.AddWithValue("@Saldo", conta.Saldo);
+                comando.Parameters.AddWithValue("@Senha", conta.Senha);
                 con.Open();
                 comando.ExecuteNonQuery();
             }
@@ -63,25 +64,43 @@ namespace Banco.Modelo
             }
         }
 
-        public Boolean validaConta(string cpf)
+        public Boolean validaConta(string cpf, string senha)
         {
                 con = new SqlConnection(banco.strConexao());
-                strSql = "SELECT * FROM Contas WHERE cpf = @cpf";
+                strSql = "SELECT * FROM Contas WHERE cpf = @cpf AND senha = @senha";
                 comando = new SqlCommand(strSql, con);
-                comando.Parameters.AddWithValue("cpf", cpf);
+                comando.Parameters.AddWithValue("@cpf", cpf);
+                comando.Parameters.AddWithValue("@senha", senha);
                 con.Open();
                 reader = comando.ExecuteReader();
                 if (reader.HasRows == true)
                 {
                     return true;
-
-            } else
+                } else
                 {
                     return false;
+                }
+                con.Close();
+        }
 
+        public Boolean validaSenha(string senha)
+        {
+            con = new SqlConnection(banco.strConexao());
+            strSql = "SELECT * FROM Contas WHERE cpf = @cpf AND senha = @senha";
+            comando = new SqlCommand(strSql, con);
+            //comando.Parameters.AddWithValue("@cpf", cpf);
+            comando.Parameters.AddWithValue("@senha", senha);
+            con.Open();
+            reader = comando.ExecuteReader();
+            if (reader.HasRows == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
             con.Close();
-
         }
 
         public void creditarSaldo(string cpf, double valor)
@@ -124,11 +143,12 @@ namespace Banco.Modelo
         public void registraMovimentacao (Movimentacao m)
         {
             con = new SqlConnection(banco.strConexao());
-            strSql = "INSERT INTO Movimentacoes (contaorigem, contadestino, valor) VALUES (@contaorigem, @contadestino, @valor)";
+            strSql = "INSERT INTO Movimentacoes (contaorigem, contadestino, valor, tipo) VALUES (@contaorigem, @contadestino, @valor, @tipo)";
             comando = new SqlCommand(strSql, con);
             comando.Parameters.AddWithValue("@contaorigem", m.ContaOrigem);
             comando.Parameters.AddWithValue("@contadestino", m.ContaDestino);
             comando.Parameters.AddWithValue("@valor", m.Valor);
+            comando.Parameters.AddWithValue("@tipo", m.Tipo);
             con.Open();
             comando.ExecuteNonQuery();
             con.Close();
@@ -144,7 +164,7 @@ namespace Banco.Modelo
                 tabela.RowHeadersVisible = false;
                 tabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 con = new SqlConnection(banco.strConexao());
-                strSql = "SELECT m.codigo as 'Código Movimentação', m.hora as 'Data', m.contaorigem as 'Conta Origem', m.contadestino as 'Conta de Destino', valor as 'Valor 'FROM Movimentacoes m WHERE contaorigem = @cpf";      
+                strSql = "SELECT m.codigo as 'Código Movimentação', m.tipo as 'Tipo', m.hora as 'Data', m.contaorigem as 'Conta Origem', m.contadestino as 'Conta de Destino', valor as 'Valor 'FROM Movimentacoes m WHERE contaorigem = @cpf";      
                 DataSet ds = new DataSet();
                 da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.Parameters.Add("@cpf", SqlDbType.VarChar).Value = cpf;

@@ -52,6 +52,7 @@
             this.tblHistorico.RowTemplate.Height = 25;
             this.tblHistorico.Size = new System.Drawing.Size(697, 209);
             this.tblHistorico.TabIndex = 1;
+            this.tblHistorico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblHistorico_CellContentClick);
             // 
             // btnVoltar
             // 

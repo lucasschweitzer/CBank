@@ -16,7 +16,7 @@ namespace Banco
             // see https://aka.ms/applicationconfiguration.
             Conta c;
             ApplicationConfiguration.Initialize();
-            Application.Run(new TelaLogin());
+            Application.Run(new TelaInicial());
         }
     }
 }

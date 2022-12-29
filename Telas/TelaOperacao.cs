@@ -1,4 +1,5 @@
-﻿using Banco.Modelo;
+﻿using Banco.Controle;
+using Banco.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,14 +20,16 @@ namespace Banco.Telas
         }
 
         ControlaConta ctrlConta = new ControlaConta();
+        string s = SalvaCpf.salvaCpf;
 
         private void btnTransferir_Click(object sender, EventArgs e)
         {
-            ctrlConta.creditarSaldo(txtbCpf.Text, Convert.ToDouble(txtbValor.Text));
+            ctrlConta.creditarSaldo(s, Convert.ToDouble(txtbValor.Text));
             Movimentacao m = new Movimentacao();
             m.Valor = Convert.ToDouble(txtbValor.Text);
-            m.ContaOrigem = txtbCpf.Text;
-            m.ContaDestino = txtbCpf.Text;
+            m.ContaOrigem = s;
+            m.ContaDestino = s;
+            m.Tipo = "Depósito";
             ctrlConta.registraMovimentacao(m);
         }
     }

@@ -1,4 +1,5 @@
-﻿using Banco.Modelo;
+﻿using Banco.Controle;
+using Banco.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,11 @@ namespace Banco.Telas
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             ctrlConta.preencheTabela(tblHistorico, s);
+        }
+
+        private void tblHistorico_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

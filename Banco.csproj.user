@@ -4,7 +4,13 @@
     <Compile Update="Telas\TelaCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\TelaConfirmaSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Telas\TelaHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\TelaLogin.cs">

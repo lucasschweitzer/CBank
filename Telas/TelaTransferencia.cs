@@ -19,16 +19,27 @@ namespace Banco.Telas
             InitializeComponent();
         }
         ControlaConta ctrlConta = new ControlaConta();
-
+        string s = SalvaCpf.salvaCpf;
+        string p = SalvaCpf.salvapass;
 
         private void btnTransferir_Click(object sender, EventArgs e)
         {
-            Movimentacao m = new Movimentacao();
-            m.Valor = (Convert.ToDouble(txtbValor.Text));
-            m.ContaOrigem = txtbOrigem.Text;
-            m.ContaDestino = txtbDestino.Text;
-            ctrlConta.registraMovimentacao(m);
-            ctrlConta.fazerTransferencia(Convert.ToDouble(txtbValor.Text), txtbOrigem.Text, txtbDestino.Text);           
+            string p = Microsoft.VisualBasic.Interaction.InputBox("Digite a sua senha: ", "Senha de confirmação", "");
+            
+            if (ctrlConta.validaConta(s, p) == true)
+            {
+                Movimentacao m = new Movimentacao();
+                m.Valor = (Convert.ToDouble(txtbValor.Text));
+                m.ContaOrigem = txtbOrigem.Text;
+                m.ContaDestino = txtbDestino.Text;
+                m.Tipo = "Transferência";
+                ctrlConta.registraMovimentacao(m);
+                ctrlConta.fazerTransferencia(Convert.ToDouble(txtbValor.Text), txtbOrigem.Text, txtbDestino.Text);
+                MessageBox.Show("Sucesso!");
+            } else
+            {
+                MessageBox.Show("Erro");
+            }     
         }
     }
 }

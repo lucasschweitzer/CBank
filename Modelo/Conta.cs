@@ -14,6 +14,7 @@ namespace Banco.Modelo
         string email;
         string telefone;
         string cpf;
+        string senha;
         Double saldo;
 
         public string Nome { get => nome; set => nome = value; }
@@ -23,5 +24,6 @@ namespace Banco.Modelo
         public double Saldo { get => saldo; set => saldo = value; }
         public string Cpf { get => cpf; set => cpf = value; }
         public int Codigo { get => codigo; set => codigo = value; }
+        public string Senha { get => senha; set => senha = value; }
     }
     }

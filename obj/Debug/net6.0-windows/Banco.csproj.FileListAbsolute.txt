@@ -53,3 +53,8 @@ C:\Users\lucass\CBank\obj\Debug\net6.0-windows\ref\Banco.dll
 C:\Users\lucass\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaOperacao.resources
 C:\Users\lucass\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaTransferencia.resources
 C:\Users\lucass\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaHistorico.resources
+C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaHistorico.resources
+C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaOperacao.resources
+C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaTransferencia.resources
+C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaInicial.resources
+C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaConfirmaSenha.resources
