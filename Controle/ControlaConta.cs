@@ -18,7 +18,6 @@ namespace Banco.Modelo
         SqlConnection con;
         SqlDataReader reader;
         string strSql;
-        Conta c;
 
         public void mostrarSaldo(string codigo)
         {
@@ -33,8 +32,9 @@ namespace Banco.Modelo
             MessageBox.Show("O seu saldo atual é: R$"+s+".");
         }
 
-        public void cadastraConta(Conta conta)
+        public Boolean cadastraConta(Conta conta)
         {
+            int a = 0;
             try
             {
                 con = new SqlConnection(banco.strConexao());
@@ -48,9 +48,8 @@ namespace Banco.Modelo
                 comando.Parameters.AddWithValue("@Saldo", conta.Saldo);
                 comando.Parameters.AddWithValue("@Senha", conta.Senha);
                 con.Open();
-                comando.ExecuteNonQuery();
+                a = comando.ExecuteNonQuery();
             }
-
 
             catch (Exception ex)
             {
@@ -62,10 +61,20 @@ namespace Banco.Modelo
                 comando.Clone();
                 comando = null;
             }
+
+            if (a > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Boolean validaConta(string cpf, string senha)
         {
+                       
                 con = new SqlConnection(banco.strConexao());
                 strSql = "SELECT * FROM Contas WHERE cpf = @cpf AND senha = @senha";
                 comando = new SqlCommand(strSql, con);
@@ -76,31 +85,25 @@ namespace Banco.Modelo
                 if (reader.HasRows == true)
                 {
                     return true;
+
                 } else
                 {
                     return false;
                 }
-                con.Close();
+                con.Close();          
         }
 
-        public Boolean validaSenha(string senha)
+        public string validaSenha(string senha)
         {
-            con = new SqlConnection(banco.strConexao());
-            strSql = "SELECT * FROM Contas WHERE cpf = @cpf AND senha = @senha";
-            comando = new SqlCommand(strSql, con);
+            //con = new SqlConnection(banco.strConexao());
+            //strSql = "SELECT * FROM Contas WHERE cpf = @cpf AND senha = @senha";
+            //comando = new SqlCommand(strSql, con);
             //comando.Parameters.AddWithValue("@cpf", cpf);
-            comando.Parameters.AddWithValue("@senha", senha);
-            con.Open();
-            reader = comando.ExecuteReader();
-            if (reader.HasRows == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            con.Close();
+            //comando.Parameters.AddWithValue("@senha", senha);
+
+            //con.Open();
+            //reader = comando.ExecuteReader();
+            return senha;
         }
 
         public void creditarSaldo(string cpf, double valor)
@@ -152,7 +155,6 @@ namespace Banco.Modelo
             con.Open();
             comando.ExecuteNonQuery();
             con.Close();
-
         }
 
         public void preencheTabela(DataGridView tabela, string cpf)
@@ -180,7 +182,19 @@ namespace Banco.Modelo
             {
                 con.Close();
             }
+        }
 
+        public string nome(string cpf)
+        {
+            con = new SqlConnection(banco.strConexao());
+            strSql = "SELECT nome + ' ' + sobrenome FROM Contas WHERE cpf = @cpf";
+            comando = new SqlCommand(strSql, con);
+            comando.Parameters.AddWithValue("@cpf", cpf);
+            con.Open();
+            var n = comando.ExecuteScalar();
+            string result = n.ToString();
+            return result;
+            con.Close();          
         }
     }
 }

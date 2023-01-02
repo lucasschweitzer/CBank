@@ -79,6 +79,7 @@
             this.txtbSenha.PasswordChar = '●';
             this.txtbSenha.Size = new System.Drawing.Size(144, 23);
             this.txtbSenha.TabIndex = 4;
+
             // 
             // btnSair
             // 

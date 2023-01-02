@@ -30,7 +30,13 @@ namespace Banco.Telas
             c.Email = txtbEmail.Text;
             c.Saldo = 0;
             c.Senha = txtbSenha.Text;
-            ctrlConta.cadastraConta(c);
+            if(ctrlConta.cadastraConta(c) == true)
+            {
+                MessageBox.Show("Conta cadastrada com sucesso!");
+            } else
+            {
+                MessageBox.Show("Erro ao cadastrar, confira os campos novamente!");
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)

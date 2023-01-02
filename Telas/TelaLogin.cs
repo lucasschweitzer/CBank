@@ -26,15 +26,16 @@ namespace Banco.Telas
         }
 
         ControlaConta ctrlConta = new ControlaConta();
-        Conta c;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (ctrlConta.validaConta(txtbCodigo.Text, txtbSenha.Text) == true)
             {
                 SalvaCpf.salvaCpf = txtbCodigo.Text;
+                SalvaCpf.salvapass = txtbCodigo.Text;
                 telaPrincipal telaP = new telaPrincipal();
-                telaP.Show();
+                MessageBox.Show("Login efetuado com sucesso! Seja bem-vindo, " + ctrlConta.nome(SalvaCpf.salvaCpf));
+                telaP.Show();               
                 this.Hide();
             } else
             {

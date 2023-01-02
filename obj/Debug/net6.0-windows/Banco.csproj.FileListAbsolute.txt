@@ -58,3 +58,34 @@ C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaO
 C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaTransferencia.resources
 C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaInicial.resources
 C:\Users\lucas\Documents\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaConfirmaSenha.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\Banco.exe
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\Banco.deps.json
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\Banco.runtimeconfig.json
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\Banco.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\Banco.pdb
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.csproj.AssemblyReference.cache
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaCadastro.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaConfirmaSenha.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaHistorico.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaInicial.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaLogin.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaOperacao.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.telaPrincipal.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.Telas.TelaTransferencia.resources
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.csproj.GenerateResource.cache
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.AssemblyInfoInputs.cache
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.AssemblyInfo.cs
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.csproj.CoreCompileInputs.cache
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.csproj.CopyComplete
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\refint\Banco.dll
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.pdb
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\Banco.genruntimeconfig.cache
+C:\Users\lucass\OneDrive - Cooperativa Santa Clara\Documentos\GitHub\CBank\obj\Debug\net6.0-windows\ref\Banco.dll

@@ -20,12 +20,14 @@ namespace Banco.Telas
         }
         ControlaConta ctrlConta = new ControlaConta();
         string s = SalvaCpf.salvaCpf;
-        string p = SalvaCpf.salvapass;
+        string p;
+        TelaConfirmaSenha tela = new TelaConfirmaSenha();
 
         private void btnTransferir_Click(object sender, EventArgs e)
         {
-            string p = Microsoft.VisualBasic.Interaction.InputBox("Digite a sua senha: ", "Senha de confirmação", "");
-            
+            tela.ShowDialog();    
+            p = tela.senha();
+            tela.limpaCampo();
             if (ctrlConta.validaConta(s, p) == true)
             {
                 Movimentacao m = new Movimentacao();
@@ -36,10 +38,11 @@ namespace Banco.Telas
                 ctrlConta.registraMovimentacao(m);
                 ctrlConta.fazerTransferencia(Convert.ToDouble(txtbValor.Text), txtbOrigem.Text, txtbDestino.Text);
                 MessageBox.Show("Sucesso!");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Erro");
-            }     
+            }
         }
     }
 }

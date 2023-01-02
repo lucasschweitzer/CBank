@@ -26,8 +26,18 @@ namespace Banco.Telas
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            SalvaCpf.salvapass = txtbSenha.Text;
+            this.Hide();
            
+        }
+
+        public string senha()
+        {
+            return txtbSenha.Text;
+        }
+
+        public void limpaCampo()
+        {
+            txtbSenha.Text = "";
         }
     }
 }

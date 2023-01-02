@@ -48,6 +48,7 @@
             // 
             this.txtbSenha.Location = new System.Drawing.Point(154, 99);
             this.txtbSenha.Name = "txtbSenha";
+            this.txtbSenha.PasswordChar = '●';
             this.txtbSenha.Size = new System.Drawing.Size(100, 23);
             this.txtbSenha.TabIndex = 1;
             // 
@@ -73,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 34);
+            this.label2.Location = new System.Drawing.Point(83, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(234, 15);
             this.label2.TabIndex = 4;
