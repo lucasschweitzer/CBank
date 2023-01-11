@@ -31,6 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtbValor = new System.Windows.Forms.TextBox();
             this.btnTransferir = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -59,11 +60,22 @@
             this.btnTransferir.UseVisualStyleBackColor = true;
             this.btnTransferir.Click += new System.EventHandler(this.btnTransferir_Click);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(671, 403);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.TabIndex = 5;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // TelaOperacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnTransferir);
             this.Controls.Add(this.txtbValor);
             this.Controls.Add(this.label2);
@@ -78,5 +90,6 @@
         private Label label2;
         private TextBox txtbValor;
         private Button btnTransferir;
+        private Button btnVoltar;
     }
 }

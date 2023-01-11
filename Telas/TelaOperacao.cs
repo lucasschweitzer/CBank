@@ -41,5 +41,13 @@ namespace Banco.Telas
                 MessageBox.Show("sucesso");
             }
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            telaPrincipal tela = new telaPrincipal();
+            tela.Show();
+            this.Hide();
+
+        }
     }
 }

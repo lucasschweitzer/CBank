@@ -193,8 +193,9 @@ namespace Banco.Modelo
             con.Open();
             var n = comando.ExecuteScalar();
             string result = n.ToString();
+            con.Close();
             return result;
-            con.Close();          
+                      
         }
     }
 }

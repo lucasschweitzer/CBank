@@ -38,6 +38,7 @@ namespace Banco
         {
             TelaOperacao tela = new TelaOperacao();
             tela.Show();
+            this.Hide();
             
         }
 
