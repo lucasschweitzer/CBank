@@ -29,7 +29,7 @@ namespace Banco.Modelo
             var result = comando.ExecuteScalar();
             con.Close();
             String s = result.ToString();
-            MessageBox.Show("O seu saldo atual é: R$"+s+".");
+            MessageBox.Show("O seu saldo atual é: R$" + s + ".");
         }
 
         public Boolean cadastraConta(Conta conta)
@@ -74,23 +74,24 @@ namespace Banco.Modelo
 
         public Boolean validaConta(string cpf, string senha)
         {
-                       
-                con = new SqlConnection(banco.strConexao());
-                strSql = "SELECT * FROM Contas WHERE cpf = @cpf AND senha = @senha";
-                comando = new SqlCommand(strSql, con);
-                comando.Parameters.AddWithValue("@cpf", cpf);
-                comando.Parameters.AddWithValue("@senha", senha);
-                con.Open();
-                reader = comando.ExecuteReader();
-                if (reader.HasRows == true)
-                {
-                    return true;
 
-                } else
-                {
-                    return false;
-                }
-                con.Close();          
+            con = new SqlConnection(banco.strConexao());
+            strSql = "SELECT * FROM Contas WHERE cpf = @cpf AND senha = @senha";
+            comando = new SqlCommand(strSql, con);
+            comando.Parameters.AddWithValue("@cpf", cpf);
+            comando.Parameters.AddWithValue("@senha", senha);
+            con.Open();
+            reader = comando.ExecuteReader();
+            if (reader.HasRows == true)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+            con.Close();
         }
 
         public string validaSenha(string senha)
@@ -134,16 +135,16 @@ namespace Banco.Modelo
         {
             con = new SqlConnection(banco.strConexao());
             strSql = "UPDATE Contas SET saldo=saldo - @valor WHERE cpf = @contaorigem UPDATE Contas SET saldo=saldo + @valor WHERE cpf = @contadestino";
-            comando = new SqlCommand (strSql, con);
+            comando = new SqlCommand(strSql, con);
             comando.Parameters.AddWithValue("@valor", valor);
             comando.Parameters.AddWithValue("contaorigem", contaorigem);
             comando.Parameters.AddWithValue("contadestino", contadestino);
-            con.Open ();
+            con.Open();
             comando.ExecuteNonQuery();
             con.Close();
         }
 
-        public void registraMovimentacao (Movimentacao m)
+        public void registraMovimentacao(Movimentacao m)
         {
             con = new SqlConnection(banco.strConexao());
             strSql = "INSERT INTO Movimentacoes (contaorigem, contadestino, valor, tipo) VALUES (@contaorigem, @contadestino, @valor, @tipo)";
@@ -166,7 +167,7 @@ namespace Banco.Modelo
                 tabela.RowHeadersVisible = false;
                 tabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 con = new SqlConnection(banco.strConexao());
-                strSql = "SELECT m.codigo as 'Código Movimentação', m.tipo as 'Tipo', m.hora as 'Data', m.contaorigem as 'Conta Origem', m.contadestino as 'Conta de Destino', valor as 'Valor 'FROM Movimentacoes m WHERE contaorigem = @cpf";      
+                strSql = "SELECT m.codigo as 'Código Movimentação', m.tipo as 'Tipo', m.hora as 'Data', m.contaorigem as 'Conta Origem', m.contadestino as 'Conta de Destino', valor as 'Valor 'FROM Movimentacoes m WHERE contaorigem = @cpf";
                 DataSet ds = new DataSet();
                 da = new SqlDataAdapter(strSql, con);
                 da.SelectCommand.Parameters.Add("@cpf", SqlDbType.VarChar).Value = cpf;
@@ -195,7 +196,7 @@ namespace Banco.Modelo
             string result = n.ToString();
             con.Close();
             return result;
-                      
+
         }
     }
 }

@@ -35,6 +35,7 @@
             this.txtbOrigem = new System.Windows.Forms.TextBox();
             this.txtbDestino = new System.Windows.Forms.TextBox();
             this.btnTransferir = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -95,11 +96,21 @@
             this.btnTransferir.UseVisualStyleBackColor = true;
             this.btnTransferir.Click += new System.EventHandler(this.btnTransferir_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(674, 394);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // TelaTransferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnTransferir);
             this.Controls.Add(this.txtbDestino);
             this.Controls.Add(this.txtbOrigem);
@@ -123,5 +134,6 @@
         private TextBox txtbOrigem;
         private TextBox txtbDestino;
         private Button btnTransferir;
+        private Button button1;
     }
 }

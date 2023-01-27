@@ -39,7 +39,7 @@ namespace Banco.Telas
                 this.Hide();
             } else
             {
-                MessageBox.Show("erro");
+                MessageBox.Show("Erro ao fazer o login, confira se o CPF e senha estão corretos");
             }
             
         }

@@ -53,5 +53,10 @@ namespace Banco
             TelaHistorico tela = new TelaHistorico();
             tela.Show();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
