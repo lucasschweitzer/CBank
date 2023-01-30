@@ -15,6 +15,7 @@ namespace Banco
         }
         ControlaConta ctrlConta = new ControlaConta();
         TelaLogin tela = new TelaLogin();
+        string s = SalvaCpf.salvaCpf;
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace Banco
 
         private void btnMostrarSaldo_Click(object sender, EventArgs e)
         {
-            string s = SalvaCpf.salvaCpf;
+            
             ctrlConta.mostrarSaldo(s);
 
         }
@@ -57,6 +58,11 @@ namespace Banco
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCodConta_Click(object sender, EventArgs e)
+        {
+            ctrlConta.codigoConta(s);
         }
     }
 }

@@ -10,5 +10,11 @@ namespace Banco.Modelo
     {
         double taxaDebito = 0.5;
         double taxaCredito = 0.1;
+        string tipo = "Conta Poupança";
+
+        public string tipoCP()
+        {
+            return tipo;
+        }
     }
 }

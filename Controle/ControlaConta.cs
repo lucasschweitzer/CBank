@@ -38,7 +38,7 @@ namespace Banco.Modelo
             try
             {
                 con = new SqlConnection(banco.strConexao());
-                strSql = "INSERT INTO Contas (nome, sobrenome, cpf, telefone, email, saldo, senha) VALUES (@Nome, @Sobrenome, @Cpf, @Telefone, @Email, @Saldo, @Senha)";
+                strSql = "INSERT INTO Contas (nome, sobrenome, tipo, cpf, telefone, email, saldo, senha) VALUES (@Nome, @Sobrenome, @Tipo, @Cpf, @Telefone, @Email, @Saldo, @Senha)";
                 comando = new SqlCommand(strSql, con);
                 comando.Parameters.AddWithValue("@Nome", conta.Nome);
                 comando.Parameters.AddWithValue("@Sobrenome", conta.Sobrenome);
@@ -47,6 +47,7 @@ namespace Banco.Modelo
                 comando.Parameters.AddWithValue("@Email", conta.Email);
                 comando.Parameters.AddWithValue("@Saldo", conta.Saldo);
                 comando.Parameters.AddWithValue("@Senha", conta.Senha);
+                comando.Parameters.AddWithValue("@Tipo", conta.Tipo);
                 con.Open();
                 a = comando.ExecuteNonQuery();
             }
@@ -197,6 +198,21 @@ namespace Banco.Modelo
             con.Close();
             return result;
 
+        }
+
+        public int codigoConta(string cpf)
+        {
+            con = new SqlConnection(banco.strConexao());
+            strSql = "SELECT codigo FROM Contas WHERE cpf = @cpf";
+            comando = new SqlCommand(strSql, con);
+            comando.Parameters.AddWithValue("@cpf", cpf);
+            con.Open();
+            var n = comando.ExecuteScalar();
+            int result = (int) n;
+            con.Close();
+            MessageBox.Show("O código da sua conta é: " + result);
+            return result;
+            
         }
     }
 }

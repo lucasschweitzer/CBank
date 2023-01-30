@@ -22,26 +22,64 @@ namespace Banco.Telas
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Conta c = new Conta();
-            c.Nome = txtbNome.Text;
-            c.Sobrenome = txtbSobrenome.Text;
-            c.Cpf = txtbCpf.Text;
-            c.Telefone = txtbTelefone.Text;
-            c.Email = txtbEmail.Text;
-            c.Saldo = 0;
-            c.Senha = txtbSenha.Text;
-            if(ctrlConta.cadastraConta(c) == true)
+            if (rbtnCorrente.Checked)
             {
-                MessageBox.Show("Conta cadastrada com sucesso!");
+                ContaCorrente c = new ContaCorrente();
+                c.Nome = txtbNome.Text;
+                c.Sobrenome = txtbSobrenome.Text;
+                c.Cpf = txtbCpf.Text;
+                c.Telefone = txtbTelefone.Text;
+                c.Email = txtbEmail.Text;
+                c.Saldo = 0;
+                c.Senha = txtbSenha.Text;
+                c.Tipo = c.tipoCC();
+                if (ctrlConta.cadastraConta(c) == true)
+                {
+                    MessageBox.Show("Conta Corrente cadastrada com sucesso!");
+                    limpaCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar, confira os campos novamente!");
+                }
             } else
             {
-                MessageBox.Show("Erro ao cadastrar, confira os campos novamente!");
+                ContaPoupanca c = new ContaPoupanca();
+                c.Nome = txtbNome.Text;
+                c.Sobrenome = txtbSobrenome.Text;
+                c.Cpf = txtbCpf.Text;
+                c.Telefone = txtbTelefone.Text;
+                c.Email = txtbEmail.Text;
+                c.Saldo = 0;
+                c.Senha = txtbSenha.Text;
+                c.Tipo = c.tipoCP();
+                if (ctrlConta.cadastraConta(c) == true)
+                {
+                    MessageBox.Show("Conta Poupança cadastrada com sucesso!");
+                    limpaCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar, confira os campos novamente!");
+                }
             }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void limpaCampos()
+        {
+            txtbNome.Text = "";
+            txtbSobrenome.Text = "";
+            txtbCpf.Text = "";
+            txtbTelefone.Text = "";
+            txtbEmail.Text = "";
+            txtbSenha.Text = "";
+            rbtnCorrente.Checked = false;
+            rbtnPoupanca.Checked = false;
         }
     }
 }

@@ -43,11 +43,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtbSenha = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.rbtnCorrente = new System.Windows.Forms.RadioButton();
+            this.rbtnPoupanca = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(379, 382);
+            this.btnCadastrar.Location = new System.Drawing.Point(371, 415);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 26;
@@ -173,11 +176,45 @@
             this.txtbSenha.Size = new System.Drawing.Size(234, 23);
             this.txtbSenha.TabIndex = 30;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(219, 376);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 15);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Tipo";
+            // 
+            // rbtnCorrente
+            // 
+            this.rbtnCorrente.AutoSize = true;
+            this.rbtnCorrente.Location = new System.Drawing.Point(308, 374);
+            this.rbtnCorrente.Name = "rbtnCorrente";
+            this.rbtnCorrente.Size = new System.Drawing.Size(108, 19);
+            this.rbtnCorrente.TabIndex = 32;
+            this.rbtnCorrente.TabStop = true;
+            this.rbtnCorrente.Text = "Conta-Corrente";
+            this.rbtnCorrente.UseVisualStyleBackColor = true;
+            // 
+            // rbtnPoupanca
+            // 
+            this.rbtnPoupanca.AutoSize = true;
+            this.rbtnPoupanca.Location = new System.Drawing.Point(427, 374);
+            this.rbtnPoupanca.Name = "rbtnPoupanca";
+            this.rbtnPoupanca.Size = new System.Drawing.Size(115, 19);
+            this.rbtnPoupanca.TabIndex = 33;
+            this.rbtnPoupanca.TabStop = true;
+            this.rbtnPoupanca.Text = "Conta-Poupança";
+            this.rbtnPoupanca.UseVisualStyleBackColor = true;
+            // 
             // TelaCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rbtnPoupanca);
+            this.Controls.Add(this.rbtnCorrente);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtbSenha);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
@@ -217,5 +254,8 @@
         private Label label1;
         private Label label7;
         private TextBox txtbSenha;
+        private Label label8;
+        private RadioButton rbtnCorrente;
+        private RadioButton rbtnPoupanca;
     }
 }
